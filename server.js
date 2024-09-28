@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 4000;
 //setting up multer to save file in disk
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    return cb(null, "./uploads");
+    return cb(null, "./tmp"); // temp folder for cloud environment
   },
   filename: function (req, file, cb) {
     return cb(null, `${Date.now()}-${file.originalname}`);
